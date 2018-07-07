@@ -1,0 +1,11 @@
+hexlify
+unhexlify
+strxor_c
+_memoryview
+StrxorTests
+suite
+Strxor_cTests
+strxor
+get_tests
+list_test_cases
+unittest

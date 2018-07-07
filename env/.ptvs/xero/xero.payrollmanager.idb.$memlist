@@ -1,0 +1,6 @@
+requests
+singular
+unicode_literals
+PayrollManager
+XERO_PAYROLL_URL
+BaseManager

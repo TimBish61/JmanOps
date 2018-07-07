@@ -1,0 +1,13 @@
+block_size
+digest_size
+MD2Hash
+load_pycryptodome_raw_lib
+c_uint8_ptr
+c_size_t
+create_string_buffer
+get_raw_buffer
+new
+_raw_md2_lib
+VoidPointer
+bord
+SmartPointer

@@ -1,0 +1,50 @@
+﻿{% load humanize %}
+
+<div class="table-responsive">
+    <table class="table table-condensed table-bordered table-hovered table-striped" cellspacing='0' >
+        <thead>
+            <tr>
+                <!--id, Type, TRANTYPE, ContactNumber, Name, Date, SubTotal, TotalTax, Total, CurrencyCode, CurrencyRate, InvoiceNumber, Reference, AmountDue, AmountPaid, UpdatedDateUTC-->
+                <th>id</th>
+                <!--<th>Type</th>-->
+                <th>Type</th>
+                <th>Code</th>
+                <!--<th>Name</th>-->
+                <th>Date</th>
+                <th align="right">Net</th>
+                <th align="right">VAT</th>
+                <th align="right">Gross</th>
+                <th>Currency</th>
+                <th>Rate</th>
+                <th>#No</th>
+                <th>Reference</th>
+                <th align="right">AmountDue</th>
+                <th align="right">AmountPaid</th>
+                <!--<th>UpdatedDateUTC</th>-->
+            </tr>
+        </thead>
+        <tbody>
+        {% for trn in oTrans %}
+            <tr>
+                <td>{{ trn.id }}</td>
+               <!-- <td>{{ trn.Type }}</td>-->
+                <td>{{ trn.TRANTYPE }}</td>
+                <td>{{ trn.ContactNumber }}</td>
+                <!--<td>{{ trn.Name }}</td>-->
+                <td>{{ trn.Date | date:"d M Y" }}</td>
+                <td align="right">{{ trn.SubTotal|floatformat:2|intcomma }}</td>
+                <td align="right">{{ trn.TotalTax|floatformat:2|intcomma }}</td>
+                <td align="right">{{ trn.Total|floatformat:2|intcomma }}</td>
+                <td>{{ trn.CurrencyCode }}</td>
+                <td align="right">{{ trn.CurrencyRate|floatformat:2|intcomma }}</td>
+                <td>{{ trn.InvoiceNumber }}</td>
+                <td>{{ trn.Reference }}</td>
+                <td align="right">{{ trn.AmountDue|floatformat:2|intcomma }}</td>
+                <td align="right">{{ trn.AmountPaid|floatformat:2|intcomma }}</td>
+                <!--<td>{{ trn.UpdatedDateUTC | date:"d M Y" }}</td>-->
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,10 @@
+BaseDatabaseIntrospection
+FieldInfo
+Database
+warnings
+Index
+SQL_BIGAUTOFIELD
+RemovedInDjango21Warning
+TableInfo
+DatabaseIntrospection
+SQL_AUTOFIELD

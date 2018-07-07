@@ -1,0 +1,13 @@
+make_stream_tests
+KeyLength
+bchr
+_memoryview
+ByteArrayTest
+list_test_cases
+suite
+get_tests
+Salsa20
+MemoryviewTest
+NonceTests
+test_data
+unittest

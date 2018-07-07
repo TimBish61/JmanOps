@@ -1,0 +1,7 @@
+new
+_UrandomRNG
+__all__
+get_random_bytes
+urandom
+atfork
+random

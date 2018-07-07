@@ -1,0 +1,15 @@
+MACSelfTest
+make_mac_tests
+HashSelfTest
+strxor_c
+binascii
+ByteArrayTest
+b
+Crypto
+tobytes
+MemoryViewTest
+HashDigestSizeSelfTest
+make_hash_tests
+HashTestOID
+sys
+unittest

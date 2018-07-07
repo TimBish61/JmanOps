@@ -1,0 +1,35 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+<div class="container">
+    <table>
+    {% for k,v in oData.items %}
+
+
+     <tr>
+        <td>
+        {{ k }}
+        </td>
+        <td>
+        {{ v.id }}
+        </td>
+        <td>
+        {{ v.currencyName }}
+        </td>
+        <td>
+        {{ v.currencySymbol }}
+        </td>
+
+    </tr>
+    {% empty %}
+    <tr>
+        <td>
+        No currencies found.
+        </td>
+    </tr>
+
+
+    {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+_raw_strxor
+strxor_c
+strxor
+c_size_t
+create_string_buffer
+get_raw_buffer
+load_pycryptodome_raw_lib
+c_uint8_ptr
+_strxor_direct

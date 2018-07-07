@@ -1,0 +1,11 @@
+test_data_512_other
+hexlify
+suite
+get_tests_SHA512_256
+SHA512
+get_tests_SHA512
+make_hash_tests
+get_tests
+get_tests_SHA512_224
+unittest
+load_tests

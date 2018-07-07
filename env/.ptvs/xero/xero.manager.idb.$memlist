@@ -1,0 +1,6 @@
+requests
+XERO_API_URL
+unicode_literals
+Manager
+singular
+BaseManager

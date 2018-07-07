@@ -1,0 +1,28 @@
+﻿
+    {% for contact in oContacts %}
+     <tr>
+        <td>
+        {{ contact.Name }}
+        </td>
+        <td>
+        {{ contact.Mobile }}
+        </td>
+        <td>
+        {{ contact.Email }}
+        </td>
+        <td>
+            <a class="fa fa-pencil" data-toggle="modal" href="{% url 'contact-edit' contact.id %}" data-target="#modal" title="edit contact" data-tooltip>Edit</a> | 
+            <a id="{{ contact.id }}" class="delete"  href="" >Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td>
+        No contacts found.
+        </td>
+    </tr>
+    {% endfor %}
+
+
+
+

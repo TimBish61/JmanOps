@@ -1,0 +1,40 @@
+﻿
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+        <form id="frmNewContactModal" method='post' action="">
+            <input type="hidden" id="RecordCode" name="RecordCode" value="">
+            <input type="hidden" id="RecordType" name="RecordType" value="">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">Contact</h4>
+              </div>
+              <div class="modal-body">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                   <div class="form-group">
+                    {% for field in form %}
+                        <div class="form-group">
+                            {% if field.errors %}
+                                <ul class="form-errors">
+                                {% for error in field.errors %}
+                                    <li><span class="fa fa-exclamation-triangle"></span> <strong>{{ error|escape }}</strong></li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                            {{ field.label_tag }} {{ field }} 
+                            {% if field.help_text %}<div class="form-helptext">{{ field.help_text }}</div>{% endif %}
+                        </div>
+                    {% endfor %}
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <input type="submit" class="btn btn-success btn-sm" value="Save" style="margin-bottom: 5px;"  id="frmNewContactModalSave" />
+                <input type="button" class="btn btn-cancel btn-sm " data-dismiss="modal" aria-hidden="true"  value="Cancel" style="margin-bottom: 5px;" />
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Cancel</button>-->
+
+              </div>
+        </form>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

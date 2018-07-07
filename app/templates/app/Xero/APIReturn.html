@@ -1,0 +1,17 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<p>Xero Transaction Details....</p>
+<br />
+<p>ID: {{ ID }}</p>
+<p>Invoice Number: {{ InvNo }}</p>
+
+<br />
+<a href="{% url 'order-list' %}">Back to List</a>
+
+
+{% endblock %}

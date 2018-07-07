@@ -1,0 +1,15 @@
+XeroNotFound
+XeroException
+XeroUnauthorized
+XeroNotImplemented
+XeroNotVerified
+XeroInternalError
+json
+XeroNotAvailable
+XeroForbidden
+parse_qs
+XeroRateLimitExceeded
+XeroUnsupportedMediaType
+parseString
+XeroBadRequest
+XeroExceptionUnknown

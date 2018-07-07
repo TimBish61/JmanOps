@@ -1,0 +1,139 @@
+{% extends "app/layout.html" %}
+{% load crispy_forms_tags %}
+{% crispy form forms.helper %}
+{% block content %}
+
+
+
+<br />
+    
+
+    
+
+    <div class="container" ><!--Column Headers-->
+        <div class="row">
+            <div class="col-sm-6" >
+                <div class="col-sm-3" >
+                <h4>{{ title }}</h4>
+
+                </div>
+            <!--style="border:1px solid black;">-->
+
+                <div class="col-sm-3" >
+                    <div id="Move" class="btn-holder">
+                            <h4><!--<a class="btn btn-success btn-xs" id='new-post-{{posts.id}}'>New</a>-->
+                            <a class="btn btn-success btn-xs" id='prev-post-{{posts.id}}'><<</a>
+                            <a class="btn btn-success btn-xs" id='next-post-{{posts.id}}'>>></a></h4>
+                    </div>
+                </div>
+            </div>
+             <div class="col-sm-3" >
+                <h4>
+                 <div class="dropdown" id="Search">   
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" id="btnSearch">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                                <input type="text" class="form-control"  placeholder="Search" id="search" name="search">
+                                <ul class="dropdown-menu" id="search_results">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </h4>
+                
+            </div>
+            <div class="col-sm-3" >
+                <h4><input type="text" readonly="readonly" class="form-control" id="Customer_Display"></h4>
+                
+            </div>
+        </div>
+    </div><!--Column Headers-->
+
+
+<!--Tab Container-->
+<br />
+  <ul class="nav nav-tabs container">
+      
+    <li class="active"><a data-toggle="tab" href="#home">Record</a></li>
+    <li><a data-toggle="tab" href="#menu1">Transactions</a></li>
+  </ul>
+<!--Tab Container-->
+
+<div class="tab-content container">
+    <div id="home" class="tab-pane fade in active">
+    <div class="row">
+        <div class="col-sm-6"><!--column1-->
+                    <form action="/customer_move/" method="POST" id="cst_move">
+                {% csrf_token %}
+                <div class="fieldWrapper" id="the_customer_post">
+                    {{ form|crispy }}
+                </div> 
+                <div id="results"></div> <!-- errors go here -->
+                <input type="submit" onclick="this.form.submited=this.value;" value="Delete" class="btn btn-danger btn-sm" id="bDelete" disabled>
+                <input type="submit" onclick="this.form.submited=this.value;" value="Save" class="btn btn-success btn-sm" id="bSave">
+                <input type="submit" onclick="this.form.submited=this.value;" value="Cancel" class="btn btn-cancel btn-sm" id="bCancel" disabled>
+
+            </form>
+        </div><!--column1-->
+
+        <div class="col-sm-6"><!--column2-->
+
+                <div class="col-sm-3" >
+                <h4>Contacts</h4>
+                </div>
+                <div class="col-sm-3 container" >
+                <div class="btn-holder"><h4><button id="bContactAdd" disabled="1" type="button" href="{% url 'contact-create' %}" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal">Add Contact</button></h4></div>
+                </div>
+
+
+            <div class="table-responsive">
+                <table class="table table-condensed table-bordered table-hovered" cellspacing='0' >
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ContactList">
+                    </tbody>
+                 </table>
+            </div>
+        </div><!--column2-->
+
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modal">
+    </div><!-- /.modal -->
+    </div><!--Home Tab-->
+
+    <div id="menu1" class="tab-pane fade"><!--Transactions Tab-->
+    <div class="container">
+    <br />
+            <a class="btn btn-success btn-xs" id='bTrans'>Transactions</a>
+            <div id="Trans">
+
+            </div>
+        </div>
+    </div><!--Transactions Tab-->
+
+</div><!-- /tab-content -->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

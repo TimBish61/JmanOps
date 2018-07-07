@@ -1,0 +1,57 @@
+﻿
+{% extends "app/layout.html" %}
+
+{% block title %}{% endblock %}
+{% block content %}
+
+<h2>Sales Order List</h2>
+<div class="table-responsive">
+    <table class="table table-condensed table-bordered table-hovered table-striped" cellspacing='0' >
+        <thead>
+            <tr>
+                <th>Order Date</th>
+                <th>Customer Code</th>
+                <th>Order Number</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        {% for order in oOrders %}
+        <tr>
+            <td>
+            {{ order.order_date | date:"d M Y"  }}
+            </td>
+            <td>
+            {{ order.account }}
+            </td>
+            <td>
+            {{ order.SONumber }}
+            </td>
+            <td>
+            {{ order.SODescription }}
+            </td>
+            <td>
+                <a href="{% url 'order-update' order.pk %}">edit</a> | 
+                <a href="{% url 'order-delete' order.pk %}">Delete</a> | 
+                <a href="{% url 'order-print' order.pk %}">Print</a> | 
+                <a href="{% url 'order-docprint' order.pk %}">Print Doc</a> | 
+                <a href="{% url 'XeroInvoice' order.pk %}">Invoice (Xero)</a> |
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td>
+            No Sales Orders found.
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>
+        <a href="{% url 'order2' %}">Add Sales Order</a>
+    </p>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,12 @@
+_raw_keccak_lib
+digest_size
+load_pycryptodome_raw_lib
+c_uint8_ptr
+c_size_t
+create_string_buffer
+get_raw_buffer
+new
+VoidPointer
+bord
+SHA3_512_Hash
+SmartPointer

@@ -1,0 +1,7 @@
+﻿{% if foundCustomers.count > 0 %}
+    {% for Cst in foundCustomers %}
+        <li class="dropdown-item"><a class="dropdown-item" id="equals-post-{{Cst.id}}">{{ Cst.Name }}</a></li>
+    {% endfor %}
+{% else %}
+    <li>None to Show!</li>
+{% endif %}

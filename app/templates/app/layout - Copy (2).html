@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} - My Django Application</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'app/content/datetimepicker/bootstrap-datepicker.js' %}">
+
+
+    <style>
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
+    </style>
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><img src="https://dkvf7eqydjaua.cloudfront.net/static/img/mainsite/journeymantv_logo_header.png"/></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Customers
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{% url 'customer' %}">Customer Records</a></li>
+                          <!--<li><a href="#">Debtors</a></li>-->
+                          <li><a href="{% url 'order2' %}">Orders</a></li>
+                          <li><a href="{% url 'order-list' %}">Order List</a></li>
+                          <li><a href="#">Invoices</a></li>
+                          <li><a href="#">Receipts</a></li>
+                          <li><a href="{% url 'currency-list' %}">Currency</a></li>
+                            <li><a href="{% url 'UpdateCurrencyTable' %}">Update Currency</a></li>
+                        </ul>
+                        currency-list
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Owners
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Owner Records</a></li>
+                          <!--<li><a href="#">Owner Creditors</a></li>-->
+                          <li><a href="#">Statements</a></li>
+                          <li><a href="#">Payments</a></li>
+                          <li><a href="#">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Media
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Title Records</a></li>
+                          <li><a href="#">Territory Sales</a></li>
+                          <li><a href="#">Reports</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Reports
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="Reports">
+                        <li class="dropdown-submenu">
+                            <a class="test" href="#">Customers<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Aged Debt</a></li>
+                                <li><a href="#">Billing</a></li>
+                            </ul>
+                          </li>
+                          <li class="dropdown-submenu">
+                            <a class="test" href="#">Owners<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Aged Creditor</a></li>
+                                <li><a href="#">Statments</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Titles</a></li>
+                          <li><a href="#">Aged Creditor</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="{% url 'contact' %}">Pay-per-View</a></li>
+                    <li><a href="{% url 'home' %}">Portal</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+
+                </ul>
+                {% include 'app/loginpartial.html' %}
+ 
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+{% block content %}{% endblock %}
+
+        <footer>
+            <!--<p>&copy; {{ year }} - My Django Application</p>-->
+        </footer>
+    </div>
+
+
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.min.js' %}"></script>
+    <script src="{% static 'app/scripts/jquery.serialize-object.min.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+    <script src="{% static 'app/scripts/main.js' %}"></script>
+    <script src="{% static 'app/scripts/CustomerRecord.js' %}"></script>    
+    <script src="{% static 'app/scripts/moment.js' %}"></script>
+    <script src="{% static 'app/scripts/datetimepicker/bootstrap-datetimepicker.js' %}"></script>
+    <script src="{% static 'app/scripts/datetimepicker/locales/bootstrap-datetimepicker.uk.js' %}"></script>
+    <script src="{% static 'app/scripts/datetimepicker/locales/bootstrap-datetimepicker.fr.js' %}"></script>
+
+
+
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <script>
+
+    $('#Reports li').hover(
+            function() {
+                 //console.log('hover over');
+                 $(this).find('ul').show();
+            },
+            function() {
+                 //console.log('hover out');
+                  $(this).find('ul').hide();
+        });  
+
+   
+    </script>
+
+    <script>
+        $(function () {
+            $("#id_order_date").datepicker({
+                minDate: new Date(2007, 1 - 1, 1)
+                ,dateFormat: "dd MM yy"
+            });            
+      } );
+    </script>
+
+    <script type="text/javascript">
+    $(function () {
+        $('#id_required_date').datetimepicker({
+        language:  'uk',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+        });
+    });
+</script>
+
+
+
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

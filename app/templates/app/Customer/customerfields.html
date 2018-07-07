@@ -1,0 +1,23 @@
+﻿{% load crispy_forms_tags %}
+{% csrf_token %}
+{{ form.non_field_errors|crispy }}
+<div class="form-group">
+ 
+{% for field in form %}
+    <div class="form-group">
+        {% if field.errors %}
+            <ul class="form-errors">
+            {% for error in field.errors %}
+                <li><span class="fa fa-exclamation-triangle"></span> <strong>{{ error|escape }}</strong></li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {{ field.label_tag }} {{ field|as_crispy_field }} 
+        {% if field.help_text %}
+            <div class="form-helptext">
+                {{ field.help_text }}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+</div>

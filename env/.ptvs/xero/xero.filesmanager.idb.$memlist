@@ -1,0 +1,16 @@
+XeroNotFound
+XeroExceptionUnknown
+XeroForbidden
+XeroRateLimitExceeded
+os
+XeroNotAvailable
+XeroBadRequest
+XeroUnauthorized
+XeroNotImplemented
+XeroInternalError
+unicode_literals
+requests
+XERO_FILES_URL
+parse_qs
+XeroUnsupportedMediaType
+FilesManager
