@@ -17,6 +17,9 @@ import posixpath
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SITE_NAME = 'JourneyMan Pictures Ltd'
+
+SITE_ROOT = os.path.abspath(os.path.dirname(__file__))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -27,7 +30,9 @@ SECRET_KEY = '80628eb4-c768-48ee-8e85-838a723a57e3'
 DEBUG = True
 
 #https://jmanops.azurewebsites.net
-ALLOWED_HOSTS = ['jmanops.azurewebsites.net','localhost']
+ALLOWED_HOSTS = ['jmandev.azurewebsites.net','localhost']
+
+XERO_API=[]
 
 
 

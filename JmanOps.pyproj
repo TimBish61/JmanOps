@@ -59,6 +59,9 @@
     <Compile Include="JmanOps\InvoiceSettings.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="JmanOps\XeroSettings.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="manage.py" />
     <Compile Include="JmanOps\__init__.py" />
     <Compile Include="JmanOps\settings.py" />
@@ -75,6 +78,7 @@
     <Folder Include="app\static\app\content\datetimepicker\" />
     <Folder Include="app\static\app\fonts\" />
     <Folder Include="app\static\app\images\" />
+    <Folder Include="app\static\app\xero\" />
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\static\app\scripts\datetimepicker\locales\" />
     <Folder Include="app\static\app\scripts\formset\" />
@@ -131,6 +135,7 @@
     <Content Include="app\templates\app\SOrders\order_ajax.html" />
     <Content Include="app\templates\app\Xero\APIReturn.html" />
     <Content Include="deploy.cmd" />
+    <Content Include="app\static\app\xero\privatekey.pem" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

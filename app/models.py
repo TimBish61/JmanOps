@@ -733,6 +733,28 @@ class XeroTranView(models.Model):
         managed = False
         db_table='r21_vw_XeroTransactions'
 
+class XeroDatalinkTimer(models.Model):
+    #id, dl_XeroCompany, dl_RSAKey, dl_SecurityFile, dl_Mon, dl_Tues, dl_Wed, dl_Thurs, dl_Fri, dl_Sat, dl_Sun, dl_At, dl_Every, dl_OnType
+    id = models.IntegerField(default=0,primary_key=True)
+    dl_XeroCompany = models.CharField(default='',null=True,blank=True,max_length=1000)
+    dl_RSAKey = models.CharField(default='',null=True,blank=True,max_length=1000)
+    dl_SecurityFile = models.CharField(default='',null=True,blank=True,max_length=1000)
+    dl_Mon =  models.SmallIntegerField(default=0)
+    dl_Tues =  models.SmallIntegerField(default=0)
+    dl_Wed =  models.SmallIntegerField(default=0)
+    dl_Thurs =  models.SmallIntegerField(default=0)
+    dl_Fri =  models.SmallIntegerField(default=0)
+    dl_Sat =  models.SmallIntegerField(default=0)
+    dl_Sun =  models.SmallIntegerField(default=0)
+
+    dl_At = models.DateTimeField(null=True)
+    dl_Every = models.DateTimeField(null=True)
+    dl_OnType = models.SmallIntegerField(default=0)
+
+    class Meta:
+        managed = False
+        db_table='r21_XeroDatalinkTimer'
+
 
 
 

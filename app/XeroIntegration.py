@@ -4,10 +4,14 @@ from xero.auth import PrivateCredentials
 
 from django.shortcuts import render, redirect, render_to_response, get_object_or_404
 from app.models import Customer,Contact,SoHeader,SoDetail2,SYSTEM_SEQCONTRL,Currency,ExchangeRates, XeroPayments,XeroPaymentsInvoice,XeroSOInvLink,XeroOverPayments,XeroPrePayments
-from app.models import XeroInvoices,XeroCreditNotes,XeroAllCreditNotes,XeroAllPayments,XeroAllInvoices,XeroAllOverPayments,XeroAllPrePayments,XeroAllPaymentAnalysis
+from app.models import XeroInvoices,XeroCreditNotes,XeroAllCreditNotes,XeroAllPayments,XeroAllInvoices,XeroAllOverPayments,XeroAllPrePayments,XeroAllPaymentAnalysis,XeroDatalinkTimer
 
 import datetime as mydate
 from datetime import datetime, timedelta
+
+from django.conf import settings
+
+from JmanOps.XeroSettings import XERO_CONSUMER_KEY, XERO_PRIVATE_KEY
 
 #xero_config = {
 #    "consumer_key": "PMIJ21PQIWMZKM5ASEE9T5URXLAI9W",
@@ -15,9 +19,10 @@ from datetime import datetime, timedelta
 #}
 
 def XeroConnect():
-    with open("C:\OpenSSL-Win64\privatekey.pem") as keyfile:     
+#C:\Users\timbi\source\repos\JmanOps\JmanOps\app\static\app\xero
+    with open(XERO_PRIVATE_KEY) as keyfile:     
         rsa_key = keyfile.read()
-    credentials = PrivateCredentials("PMIJ21PQIWMZKM5ASEE9T5URXLAI9W", rsa_key) 
+    credentials = PrivateCredentials(XERO_CONSUMER_KEY, rsa_key) 
     xero = Xero(credentials)
     return xero
 
