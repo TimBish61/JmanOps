@@ -3,7 +3,7 @@ certifi==2018.4.16
 cffi==1.11.5
 chardet==3.0.4
 cryptography==2.2.2
-Django==2.0.4
+Django==2.2.10
 django-crispy-forms==1.7.0
 django-pyodbc-azure==2.0.4.1
 idna==2.6
